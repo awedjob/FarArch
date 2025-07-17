@@ -93,20 +93,20 @@
         "515": {
           "json": {
             "position": {
-              "x": -16.5,
+              "x": -10,
               "y": 0,
-              "z": 25.25
+              "z": 31.5
             },
             "scale": {
-              "x": 0.9999999403953552,
+              "x": 1,
               "y": 1,
-              "z": 0.9999999403953552
+              "z": 1
             },
             "rotation": {
               "x": 0,
-              "y": 0.7071067690849304,
+              "y": 0,
               "z": 0,
-              "w": 0.7071067690849304
+              "w": 1
             },
             "parent": 0
           }
@@ -216,7 +216,7 @@
         "serializationType": "map"
       },
       "data": {
-        "0": {
+        "515": {
           "json": {
             "gizmo": 3
           }
@@ -510,9 +510,12 @@
             "ageRating": "T",
             "categories": [],
             "author": "Farcaster",
-            "email": "",
             "tags": [],
             "layout": {
+              "base": {
+                "x": -132,
+                "y": 90
+              },
               "parcels": [
                 {
                   "x": -134,
@@ -546,14 +549,8 @@
                   "x": -131,
                   "y": 90
                 }
-              ],
-              "base": {
-                "x": -132,
-                "y": 90
-              }
+              ]
             },
-            "silenceVoiceChat": false,
-            "disablePortableExperiences": false,
             "spawnPoints": [
               {
                 "name": "Spawn Point 1",
@@ -921,6 +918,26 @@
       "data": {
         "515": {
           "json": {}
+        }
+      }
+    },
+    {
+      "name": "inspector::Lock",
+      "jsonSchema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean",
+            "serializationType": "boolean"
+          }
+        },
+        "serializationType": "map"
+      },
+      "data": {
+        "515": {
+          "json": {
+            "value": true
+          }
         }
       }
     }
