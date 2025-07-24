@@ -12,17 +12,16 @@ Transform.create(target, {
   position: { x: 16, y: 0, z: 16 },
   scale: { x: 1, y: 1, z: 1 }
 })
-
-const arch = engine.addEntity()
-
-Transform.create(arch, {
-  position: { x: 16, y: 0, z: 16 },
-  scale: { x: 1, y: 1, z: 1 }
+// this is a null entity, it's center position was returning incorrect position informtion. We need the center position of the target and not the null.
+const centerPos = engine.addEntity()
+Transform.create(centerPos, {
+    parent: target,
+    position: { x: 0, y: 0, z: 0 },
+    scale: { x: 1, y: 1, z: 1 }
 })
-
 // this will be a repeatable trigger. everytime they get to the ledge at the top of the arch it will make the target ready to be used.
 utils.triggers.addTrigger(
-    arch,
+    target,
     1,
     1,
     [{ type: 'box', scale: {x:5,y:8,z:31}, position: Vector3.create(-17, 43.42, 15) }],
@@ -30,7 +29,7 @@ utils.triggers.addTrigger(
     console.log('Player entered the trigger Jumparea')
 
         utils.triggers.oneTimeTrigger(
-            target,
+            centerPos,
             utils.LAYER_2,
             utils.LAYER_1,
             [{ type: 'box' ,scale: {x:30,y:2,z:30}}],
@@ -49,7 +48,7 @@ utils.triggers.addTrigger(
     },
     Color3.Yellow()
   )
-    // utils.triggers.enableDebugDraw(true)
+    utils.triggers.enableDebugDraw(true)
 }
 export function compareToCenter(posOne: Vector3, posTwo: Vector3): number {
     // Calculate the distance between two positions in the x-z plane
