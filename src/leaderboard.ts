@@ -1,4 +1,3 @@
-
 import {
   Entity,
   GltfContainer,
@@ -16,19 +15,19 @@ export class LeaderBoard {
   constructor(transform: TransformTypeWithOptionals, size: number) {
     const smallStoneWall = engine.addEntity()
     GltfContainer.create(smallStoneWall, {
-      src: 'models/FenceStoneTallSmall_01/FenceStoneTallSmall_01.glb'
+      src: './models/FenceStoneTallSmall_01.glb'
     })
     Transform.create(smallStoneWall, transform)
 
     const titleText = engine.addEntity()
     Transform.create(titleText, {
-      position: Vector3.create(0, 2.2, -0.5),
-      rotation: Quaternion.fromEulerDegrees(0, -90, 0),
-      scale: Vector3.create(0.5 / transform.scale!.z, 0.5 / transform.scale!.y, 0.5 / transform.scale!.x),
+      position: Vector3.create(14, 2.125, -0.5),
+      rotation: Quaternion.fromEulerDegrees(0, 165, 0),
+      scale: Vector3.create(1 / transform.scale!.z, 0.5 / transform.scale!.y, 0.5 / transform.scale!.x),
       parent: smallStoneWall
     })
     TextShape.create(titleText, {
-      text: 'Player Score',
+      text: 'Meters from Center',
       fontSize: 20,
       textColor: Color4.White(),
       width: 20,
@@ -41,17 +40,17 @@ export class LeaderBoard {
     }
   }
 
-//   updateBoard(scoreData: any[]) {
-//     for (let i = 0; i < this.currentData.length; i++) {
-//       if (i < scoreData.length) {
-//         // update score data
-//         this.currentData[i].updateValue(scoreData[i].name, scoreData[i].score.toString())
-//       } else {
-//         // create empty line
-//         this.currentData[i].updateValue('----', '----')
-//       }
-//     }
-//   }
+  updateBoard(scoreData: any[]) {
+    for (let i = 0; i < this.currentData.length; i++) {
+      if (i < scoreData.length) {
+        // update score data
+        this.currentData[i].updateValue(scoreData[i].name, scoreData[i].score.toString())
+      } else {
+        // create empty line
+        this.currentData[i].updateValue('----', '----')
+      }
+    }
+  }
 }
 
 export class LeaderBoardRow {

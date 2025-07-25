@@ -27,30 +27,30 @@
       "-131,90"
     ]
   },
-  "spawnPoints": [
-    {
-      "name": "Spawn Point 1",
-      "default": true,
-      "position": {
-        "x": [
-          -8.0,
-          -9.0
-        ],
-        "y": [
-          44,
-          44
-        ],
-        "z": [
-          20.0,
-          22.0
-        ]
-      },
-      "cameraTarget": {
-        "x": 16,
-        "y": 30,
-        "z": 16
+    "spawnPoints": [
+      {
+        "name": "Spawn Point 1",
+        "default": true,
+        "position": {
+          "x": [
+            31.3,
+            32.0
+          ],
+          "y": [
+            0.88,
+            0.88
+          ],
+          "z": [
+            16.0,
+            12.0
+          ]
+        },
+        "cameraTarget": {
+          "x": -10,
+          "y": 30,
+          "z": 32.5
+        }
       }
-    }
   ],
   "requiredPermissions": [
     "ALLOW_TO_TRIGGER_AVATAR_EMOTE",

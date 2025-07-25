@@ -11,8 +11,9 @@ const myEntity = engine.addEntity()
 MeshRenderer.setBox(myEntity)
 
 Transform.create(myEntity, {
-	position: { x: -9, y: 1.5, z: 32 },
-    scale: { x: 0, y: 5, z: 3 }
+	position: { x: 22, y: 2.0, z: 3 },
+    rotation: { x: 0, y: 0.5, z: 0, w: 1 },
+    scale: { x: 0, y: 6, z: 3 },
 })
 
 utils.triggers.addTrigger(
@@ -24,9 +25,9 @@ utils.triggers.addTrigger(
     console.log('Player entered portal trigger')
 
     movePlayerTo({
-			newRelativePosition: Vector3.create(-15, 42, 20),
-			cameraTarget: Vector3.create(-2.5 , 43.5, 45.5),
-			avatarTarget: Vector3.create(-2.5 , 43.5, 45.5),
+			newRelativePosition: Vector3.create(-11, 44, 17.75),
+			cameraTarget: Vector3.create(24.25 , 20.0, 18.0),
+			avatarTarget: Vector3.create(-2.0 , 46.0, 17.75),
 		})
 
         },
