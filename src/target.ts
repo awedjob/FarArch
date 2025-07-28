@@ -63,18 +63,18 @@ utils.triggers.addTrigger(
   )
     // utils.triggers.enableDebugDraw(true)
 
-    // refresh the leaderboard every 5 seconds (5000 milliseconds)
+    // refresh the leaderboard every 30 seconds (30000 milliseconds)
     utils.timers.setInterval(() => {
       fetchScores(leaderboard)
-    }, 5000) 
+    }, 30000)
 
 }
 export function compareToCenter(posOne: Vector3, posTwo: Vector3): number {
     // Calculate the distance between two positions in the x-z plane
-    // toFixed(2) will round the result to 2 decimal places
+    // toFixed(3) will round the result to 3 decimal places
     // and parseFloat will convert it back to a number
     let diffX = posOne.x - posTwo.x
     let diffZ = posOne.z - posTwo.z
-    let distance = Math.sqrt(diffX ** 2 + diffZ ** 2).toFixed(2)
+    let distance = Math.sqrt(diffX ** 2 + diffZ ** 2).toFixed(3)
     return parseFloat(distance)
 }   

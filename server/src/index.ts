@@ -204,7 +204,7 @@ const HOST = process.env.HOST || '0.0.0.0';
 app.listen(PORT, HOST, () => {
   console.log(`🚀 Leaderboard server running on port ${PORT}`);
   console.log(`📊 Database: leaderboard.db`);
-  console.log(`🌐 Health check: http://localhost:${PORT}/health`);
+  console.log(`🌐 Health check: http://0.0.0.0:${PORT}/health`);
 });
 
 
