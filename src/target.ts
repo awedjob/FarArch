@@ -3,6 +3,9 @@ import * as utils from '@dcl-sdk/utils'
 import { Color3, Vector3 } from '@dcl/sdk/math'
 import { LeaderBoard } from './leaderboard'
 import { fetchScores, publishScore } from './serverHandler'
+import { uiMenu } from './ui'
+
+export let score: string = ""
 
 export function target() {
     let playerPos = Vector3.create(0, 0, 0)
@@ -76,5 +79,9 @@ export function compareToCenter(posOne: Vector3, posTwo: Vector3): number {
     let diffX = posOne.x - posTwo.x
     let diffZ = posOne.z - posTwo.z
     let distance = Math.sqrt(diffX ** 2 + diffZ ** 2).toFixed(3)
+    score = "Your Score is: " + distance
+     utils.timers.setInterval(() => {
+      score = ""
+    }, 5000)   
     return parseFloat(distance)
 }   

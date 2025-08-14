@@ -3,10 +3,13 @@ import { engine } from '@dcl/sdk/ecs'
 import { target } from './target'
 import { createTeleport } from './teleport'
 import * as utils from '@dcl-sdk/utils'
+import { ReactEcsRenderer } from '@dcl/sdk/react-ecs'
+import { uiMenu } from './ui'
 
 export function main() {
   target()
   createTeleport()
+  ReactEcsRenderer.setUiRenderer(uiMenu)
 }
 
 // const entity = engine.addEntity()

@@ -4,8 +4,8 @@ import { getPlayer } from '@dcl/sdk/src/players'
 import { signedFetch } from '~system/SignedFetch'
 
 // SQLite server URL - update this to your server URL
-const serverBaseUrl = 'http://localhost:3000/'
-// const serverBaseUrl = 'https://fartarget-production.up.railway.app/'
+// const serverBaseUrl = 'http://localhost:3000/'
+const serverBaseUrl = 'https://fartarget-production.up.railway.app/'
 
 // get latest scores from SQLite server
 // if there is a new #1 score, there will be an announcement using admin smart object.
